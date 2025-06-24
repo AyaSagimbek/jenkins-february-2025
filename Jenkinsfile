@@ -9,7 +9,7 @@ spec:
   volumes:
   - name: docker
     hostPath:
-      path: var/run/docker.sock
+      path: /var/run/docker.sock
   containers:
   - command:
     - sleep
@@ -17,7 +17,7 @@ spec:
     image: docker
     name: docker
     volumeMounts:
-    - mountPath: var/run/docker.sock
+    - mountPath: /var/run/docker.sock
       name: docker
 '''
 
