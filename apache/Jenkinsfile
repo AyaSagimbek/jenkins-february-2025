@@ -19,12 +19,7 @@ podTemplate(cloud: 'kubernetes', label: 'kubernetes', yaml: template ) {
             git branch: 'main', url: 'https://github.com/AyaSagimbek/jenkins-february-2025.git'
         }
         stage ("Test") {
-          sh """
-          terraform version
-          kubectl version
-          helm version
-          kubectl get nodes
-          """
+          sh "helm upgrade --install apache ./apache"
         }
 }
 }
